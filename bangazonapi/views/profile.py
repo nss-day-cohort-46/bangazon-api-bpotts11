@@ -82,7 +82,8 @@ class Profile(ViewSet):
         """
         try:
             current_user = Customer.objects.get(user=4)
-            current_user.recommends = Recommendation.objects.filter(recommender=current_user)
+            current_user.recommends = Recommendation.objects.filter(
+                recommender=current_user)
 
             serializer = ProfileSerializer(
                 current_user, many=False, context={'request': request})
@@ -184,7 +185,6 @@ class Profile(ViewSet):
                 cart = {}
                 cart["order"] = OrderSerializer(open_order, many=False, context={
                                                 'request': request}).data
-                cart["order"]["line_items"] = line_items.data
                 cart["order"]["size"] = len(line_items.data)
 
             except Order.DoesNotExist as ex:
