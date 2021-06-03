@@ -6,8 +6,8 @@
     <title>Bangazon Reports</title>
   </head>
   <body>
-    <h1>Completed Orders</h1>
-        {% for order in completedorder_list %}
+    <h1>Incomplete Orders</h1>
+        {% for order in incompleteorder_list %}
             <ul>
                 <li>Customer Name: {{ order.customer_name }}</li>
                 <li>Order Id: {{ order.id }}</li>
