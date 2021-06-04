@@ -9,9 +9,17 @@ class Customer(models.Model):
     address = models.CharField(max_length=55)
 
     @property
-    def recommends(self):
-        return self.__recommends
+    def recommended(self):
+        return self.__recommended
 
-    @recommends.setter
-    def recommends(self, value):
-        self.__recommends = value
+    @recommended.setter
+    def recommended(self, value):
+        self.__recommended = value
+
+    @property
+    def recommendations(self):
+        return self.__recommendations
+
+    @recommendations.setter
+    def recommendations(self, value):
+        self.__recommendations = value
